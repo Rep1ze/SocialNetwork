@@ -1,16 +1,13 @@
-import express from "express";
-import { dirname } from 'node:path';
-import { fileURLToPath } from 'node:url';
-
-import { homeGet, homePost, registerGet, registerPost } from "../controllers/Controllers.mjs";
-
-const __dirname = dirname(fileURLToPath(import.meta.url));
+import express from "express"
+import { HomeGet, HomePost, RegisterGet, RegisterPost } from "../controllers/Controllers.mjs"
 
 const router = express.Router()
 
-router.get("/home",homeGet)
-router.post("/home",homePost)
-router.get("/register",registerGet)
-router.post("/register",registerPost)
+router.get("/register",RegisterGet)
+router.get("/home",HomeGet)
+
+
+router.post("/register",RegisterPost)
+router.post("/home",HomePost)
 
 export default router
